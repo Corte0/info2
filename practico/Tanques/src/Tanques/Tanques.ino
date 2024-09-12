@@ -18,9 +18,14 @@ void setup() {
 
   Serial.begin(9600);
   delay(100);
+  Serial.println("starting");
 }
 
 void loop() {
+  for (int i = 0; i < 3; i++)
+    if (tanques[i].getPrint())
+      Serial.println(tanques[i].getCuenta());
+
   int priority = 0;
 
   if((tanques[0].isEmpty() || tanques[1].isEmpty() || tanques[2].isEmpty()))
